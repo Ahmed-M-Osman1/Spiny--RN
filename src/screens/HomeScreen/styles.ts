@@ -26,6 +26,11 @@ export const styles = StyleSheet.create({
     width: screenWidth / 1.2,
     margin: 10,
   },
+  selectionPhoto: {
+    height: screenHeight / 3,
+    width: screenWidth / 1.2,
+    
+  },
   selectionText: {
     fontSize: 25,
     color: 'red',
@@ -33,4 +38,3 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
   },
 });
-

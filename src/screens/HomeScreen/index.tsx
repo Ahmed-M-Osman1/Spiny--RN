@@ -17,29 +17,30 @@ export default function HomeScreen() {
         Where you can pick a random Movie or choose a SuperHero to get
         a random movie for him.
       </Text>
-      <TouchableOpacity
-        style={styles.selectionCard}
-        onPress={() => console.log('click')}
-      >
-        <Text style={styles.selectionText}>Pick Random Movie</Text>
-        <View style={{ height: '100%', width: '100%' }}>
-          <Lottie
-            source={require('../../../assets/QuestionmarkAnimation.lottie.json')}
-            autoPlay
-            loop
-          />
-        </View>
-      </TouchableOpacity>
+      <View style={styles.selectionCard}>
+        <TouchableOpacity onPress={() => console.log('click')}>
+          <Text style={styles.selectionText}>Pick Random Movie</Text>
+          {
+            // This view is necessary for the lottie animation to fit inside the selection card (without it the animation will expand out side the card)
+          }
+          <View style={styles.selectionPhoto}>
+            <Lottie
+              source={require('../../../assets/QuestionmarkAnimation.lottie.json')}
+              autoPlay
+              loop
+            />
+          </View>
+        </TouchableOpacity>
+      </View>
       <TouchableOpacity
         style={styles.selectionCard}
         onPress={() => console.log('click')}
       >
         <Text style={styles.selectionText}>Choose Champ </Text>
-        <View style={{ height: '100%', width: '100%' }}>
           <Image
             source={require('../../../assets/The_Marvel_Universe.png')}
+            style={styles.selectionPhoto}
           />
-        </View>
       </TouchableOpacity>
     </LinearGradient>
   );
