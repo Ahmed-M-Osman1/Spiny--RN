@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
   },
   selectedMoviePhoto: {
     height: screenHeight / 2.8,
-    maxWidth: screenWidth / 2,
+    width: screenWidth / 2,
   },
   selectedMovieTitleText: {
     color: 'red',

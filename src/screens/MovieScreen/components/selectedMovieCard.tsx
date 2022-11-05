@@ -21,7 +21,11 @@ export default function SelectedMovieCard({
             {selectedItem.description}
           </Text>
           <TouchableOpacity
-            onPress={() => navigation.navigate('MovieDetail')}
+            onPress={() =>
+              navigation.navigate('MovieDetail', {
+                selectedItemID: selectedItem.id,
+              })
+            }
             style={styles.NavigateToDetailButton}
           >
             <Text style={styles.NavigateToDetailButtonText}>

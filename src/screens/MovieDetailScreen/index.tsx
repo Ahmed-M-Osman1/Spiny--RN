@@ -1,7 +1,12 @@
-import { View, Text } from 'react-native';
+import { View, Text, Image, ScrollView } from 'react-native';
 import React from 'react';
+import { LinearGradient } from 'expo-linear-gradient';
+import { styles } from './styles';
+import { createVoidZero } from 'typescript';
+import MovieDetailScrollView from './components/movieDetailScrollView';
 
-export default function MovieDetail() {
+export default function MovieDetail({ route }) {
+  const { selectedItemID } = route.params;
   const x =
     // 20221105130139
     // https://imdb-api.com/en/API/Title/k_4rgq7u85/tt0110413
@@ -347,8 +352,20 @@ export default function MovieDetail() {
       errorMessage: null,
     };
   return (
-    <View>
-      <Text>MovieDetail</Text>
-    </View>
+    <LinearGradient
+      colors={['gold', 'white']}
+      style={styles.container}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
+    >
+      <Text style={styles.Title}>{x.fullTitle}</Text>
+      <Image
+        style={styles.MovieBanner}
+        source={{
+          uri: x.image,
+        }}
+      />
+      <MovieDetailScrollView data={x} />
+    </LinearGradient>
   );
 }
