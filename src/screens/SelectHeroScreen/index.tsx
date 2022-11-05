@@ -16,7 +16,7 @@ export default function SelectHeroScreen(): JSX.Element {
         showsVerticalScrollIndicator={false}
         data={characters}
         keyExtractor={(item, index) => String(index)}
-        renderItem={({ item, index }) => (
+        renderItem={({ item }) => (
           <View style={styles.selectionCard}>
             <Text>{item.name}</Text>
             <View>

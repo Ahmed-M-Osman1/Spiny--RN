@@ -13,26 +13,15 @@ export const styles = StyleSheet.create({
     fontSize: 35,
     color: 'white',
   },
-  introText: {
-    fontSize: 15,
-    color: 'white',
-    margin: 3,
-  },
   selectionCard: {
     backgroundColor: 'white',
     borderRadius: 10,
     height: screenHeight / 3,
-    width: screenWidth / 1.5,
+    width: screenWidth / 1.3,
     marginTop: 50,
   },
   selectionPhoto: {
     height: screenHeight / 3,
-    width: screenWidth / 1.5,
-  },
-  selectionText: {
-    fontSize: 25,
-    color: 'red',
-    fontWeight: 'bold',
-    alignSelf: 'center',
+    width: screenWidth / 1.3,
   },
 });

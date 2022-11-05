@@ -1,13 +1,13 @@
-import { SET_SCREEN_DIMENSIONS } from './action';
+import { SET_SEARCH_RESULTS } from './action';
 
 const initialState = {
-  appDimensions: {},
+  searchResults: [],
 };
 
 function appReducer(state = initialState, action) {
   switch (action.type) {
-    case SET_SCREEN_DIMENSIONS:
-      return { ...state, appDimensions: action.payload };
+    case SET_SEARCH_RESULTS:
+      return { ...state, searchResults: action.payload };
     default:
       return state;
   }

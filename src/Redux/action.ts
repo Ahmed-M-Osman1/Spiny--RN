@@ -1,11 +1,11 @@
 import { Dispatch } from 'redux';
 
-export const SET_SCREEN_DIMENSIONS = 'SET_SCREEN_DIMENSIONS';
+export const SET_SEARCH_RESULTS = 'SET_SEARCH_RESULTS';
 
-export const setScreenDimensions =
-  (dimensions: object) => (dispatch: Dispatch) => {
+export const setSearchResults =
+  (results: Array<object>) => (dispatch: Dispatch) => {
     dispatch({
-      type: SET_SCREEN_DIMENSIONS, //action type
-      payload: dimensions, //action value
+      type: SET_SEARCH_RESULTS, //action type
+      payload: results, //action value
     });
   };
