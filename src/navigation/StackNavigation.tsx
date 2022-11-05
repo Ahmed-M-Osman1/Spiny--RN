@@ -14,10 +14,10 @@ const StackNavigation = () => {
         headerShown: false,
       }}
     >
-      <Stack.Screen name="Movie" component={MovieScreen} />
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="SplashScreen" component={SplashScreen} />
       <Stack.Screen name="Heroes" component={SelectHeroScreen} />
+      <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen name="Movie" component={MovieScreen} />
+      <Stack.Screen name="SplashScreen" component={SplashScreen} />
       <Stack.Screen name="MovieDetail" component={MovieDetail} />
     </Stack.Navigator>
   );
