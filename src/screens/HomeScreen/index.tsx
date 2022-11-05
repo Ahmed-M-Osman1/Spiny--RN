@@ -4,7 +4,7 @@ import { styles } from './styles';
 import { LinearGradient } from 'expo-linear-gradient';
 import Lottie from 'lottie-react-native';
 
-export default function HomeScreen() {
+export default function HomeScreen(): JSX.Element {
   return (
     <LinearGradient
       colors={['blue', 'red']}
@@ -37,10 +37,10 @@ export default function HomeScreen() {
         onPress={() => console.log('click')}
       >
         <Text style={styles.selectionText}>Choose Champ </Text>
-          <Image
-            source={require('../../../assets/The_Marvel_Universe.png')}
-            style={styles.selectionPhoto}
-          />
+        <Image
+          source={require('../../../assets/The_Marvel_Universe.png')}
+          style={styles.selectionPhoto}
+        />
       </TouchableOpacity>
     </LinearGradient>
   );

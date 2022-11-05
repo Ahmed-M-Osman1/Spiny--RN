@@ -7,7 +7,7 @@ import {
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    //justifyContent: 'center',
     alignItems: 'center',
   },
   welcomeText: {
@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     height: screenHeight / 3,
     width: screenWidth / 1.2,
-    margin: 10,
+    margin: 50,
   },
   selectionPhoto: {
     height: screenHeight / 3,

@@ -2,7 +2,7 @@
   {
     "name": "Iron Man",
     "search-string": "Iron-man",
-    "photo": "https://qurango.net/radio/tarateel"
+    "photo": "require('../../characters/charactersPhoto/iron-man.png')"
   },
   {
     "name": "Iron Man",
