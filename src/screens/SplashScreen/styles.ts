@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { screenHeight } from '../../styles/getWidthAndHeight';
 
 export const styles = StyleSheet.create({
   container: {
@@ -6,6 +7,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   MarvialOpen: {
-    height: '100%',
+    height: screenHeight,
   },
 });

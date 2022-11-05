@@ -5,7 +5,9 @@ import { useNavigation } from '@react-navigation/native';
 import { styles } from './styles';
 
 export default function SplashScreen() {
+  
   const { navigate } = useNavigation();
+
   return (
     <View style={styles.container}>
       <Lottie
