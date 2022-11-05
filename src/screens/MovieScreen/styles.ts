@@ -9,10 +9,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
   },
-  welcomeText: {
-    fontSize: 35,
-    color: 'white',
-  },
   selectedMovieCard: {
     marginTop: 45,
     backgroundColor: 'white',
@@ -58,5 +54,15 @@ export const styles = StyleSheet.create({
   optionsMoviePhoto: {
     height: screenHeight / 3,
     width: screenWidth / 1.3,
+    borderRadius: 10,
+  },
+  optionsCardTitle: {
+    fontSize: 20,
+    alignSelf: 'center',
+  },
+  similarTitle: {
+    margin: 15,
+    fontSize: 20,
+    color: 'navy',
   },
 });

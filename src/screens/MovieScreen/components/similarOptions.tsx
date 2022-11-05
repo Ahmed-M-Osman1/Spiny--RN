@@ -10,15 +10,17 @@ export default function SimilarOptions({ data, selectedCharacters }) {
       keyExtractor={(item, index) => String(index)}
       renderItem={({ item }) => (
         <View style={styles.optionsCards}>
-          <Text>{item.title}</Text>
+          <Text style={styles.optionsCardTitle}>{item.title}</Text>
           <Image
             source={
               item.image ==
-              'https://imdb-api.com/images/original/nopicture.jpg'
+                'https://imdb-api.com/images/original/nopicture.jpg' ||
+              item.image.length < 1
                 ? selectedCharacters.photo
                 : { uri: item.image }
             }
             style={styles.optionsMoviePhoto}
+            resizeMode="stretch"
           />
         </View>
       )}

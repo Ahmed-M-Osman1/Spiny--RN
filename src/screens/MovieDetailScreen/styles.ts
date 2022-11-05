@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
     height: 400,
     width: 300,
     marginBottom: 10,
+    alignSelf: 'center',
   },
   detailText: {
     margin: 3,

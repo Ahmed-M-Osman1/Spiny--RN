@@ -24,4 +24,8 @@ export const styles = StyleSheet.create({
     height: screenHeight / 3,
     width: screenWidth / 1.3,
   },
+  optionsCardTitle: {
+    fontSize: 20,
+    alignSelf: 'center',
+  },
 });

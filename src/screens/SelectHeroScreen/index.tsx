@@ -1,10 +1,21 @@
 import React from 'react';
-import { View, Text, Image, FlatList } from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
 import { styles } from './styles';
 import { LinearGradient } from 'expo-linear-gradient';
 import { characters } from '../../characters/characters';
+import { useAppDispatch } from '../../Redux/hooks';
+import { setSelectedCharacter } from '../../Redux/action';
 
-export default function SelectHeroScreen(): JSX.Element {
+export default function SelectHeroScreen({
+  navigation,
+}): JSX.Element {
+  const dispatch = useAppDispatch();
   return (
     <LinearGradient
       colors={['red', 'white']}
@@ -17,8 +28,14 @@ export default function SelectHeroScreen(): JSX.Element {
         data={characters}
         keyExtractor={(item, index) => String(index)}
         renderItem={({ item }) => (
-          <View style={styles.selectionCard}>
-            <Text>{item.name}</Text>
+          <TouchableOpacity
+            style={styles.selectionCard}
+            onPress={() => {
+              dispatch(setSelectedCharacter(item));
+              navigation.navigate('Movie');
+            }}
+          >
+            <Text style={styles.optionsCardTitle}>{item.name}</Text>
             <View>
               <Image
                 style={styles.selectionPhoto}
@@ -26,7 +43,7 @@ export default function SelectHeroScreen(): JSX.Element {
                 resizeMode="stretch"
               />
             </View>
-          </View>
+          </TouchableOpacity>
         )}
       />
     </LinearGradient>

@@ -1,47 +1,47 @@
 export const characters = [
   {
     name: 'Iron Man',
-    'search-string': 'Iron-man',
+    searchString: 'Iron-man',
     photo: require('./charactersPhoto/iron-man.png'),
   },
   {
     name: 'Aqua Man',
-    'search-string': 'Aqua-man',
+    searchString: 'Aqua-man',
     photo: require('./charactersPhoto/aquaman.png'),
   },
   {
     name: 'Batman',
-    'search-string': 'Batman',
+    searchString: 'Batman',
     photo: require('./charactersPhoto/batman.png'),
   },
   {
     name: 'Black Widow',
-    'search-string': 'Black-Widow',
+    searchString: 'marvel Black-Widow',
     photo: require('./charactersPhoto/black-widow.png'),
   },
   {
     name: 'Captain America',
-    'search-string': 'Captain-America',
+    searchString: 'Captain-America',
     photo: require('./charactersPhoto/captian-america.png'),
   },
   {
     name: 'Dr. Strange',
-    'search-string': 'Dr-Strange',
+    searchString: 'Dr-Strange',
     photo: require('./charactersPhoto/dr-strange.png'),
   },
   {
     name: 'Hulk',
-    'search-string': 'hulk',
+    searchString: 'hulk',
     photo: require('./charactersPhoto/hulk.png'),
   },
   {
     name: 'Spider Man',
-    'search-string': 'Spiderman',
+    searchString: 'Spiderman',
     photo: require('./charactersPhoto/spider-man.png'),
   },
   {
     name: 'Thor',
-    'search-string': 'thor',
+    searchString: 'thor',
     photo: require('./charactersPhoto/thor.png'),
   },
 ];

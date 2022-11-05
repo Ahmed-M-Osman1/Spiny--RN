@@ -37,7 +37,8 @@ export default function SelectedMovieCard({
           style={styles.selectedMoviePhoto}
           source={
             selectedItem.image ==
-            'https://imdb-api.com/images/original/nopicture.jpg'
+              'https://imdb-api.com/images/original/nopicture.jpg' ||
+            selectedItem.image.length < 1
               ? characters[0].photo
               : { uri: selectedItem.image }
           }

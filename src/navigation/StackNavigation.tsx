@@ -14,7 +14,6 @@ const StackNavigation = () => {
         headerShown: false,
       }}
     >
-      <Stack.Screen name="Movie" component={MovieScreen} />
       <Stack.Screen name="SplashScreen" component={SplashScreen} />
       <Stack.Screen
         name="HomeScreen"
@@ -22,6 +21,7 @@ const StackNavigation = () => {
         options={{ gestureEnabled: false }}
       />
       <Stack.Screen name="Heroes" component={SelectHeroScreen} />
+      <Stack.Screen name="Movie" component={MovieScreen} />
       <Stack.Screen name="MovieDetail" component={MovieDetail} />
     </Stack.Navigator>
   );

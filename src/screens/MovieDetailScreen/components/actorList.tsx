@@ -12,9 +12,10 @@ export default function ActorList({ actors }) {
   return (
     <View>
       <Text style={styles.Title}>Movie Actors</Text>
-      {actors.map((item: actor) => {
+      {actors.map((item: actor, index: number) => {
         return (
           <View
+            key={index}
             style={{
               flexDirection: 'row',
               height: 110,
@@ -32,6 +33,7 @@ export default function ActorList({ actors }) {
                 alignSelf: 'center',
                 margin: 5,
               }}
+              resizeMode="stretch"
             />
             <View
               style={{

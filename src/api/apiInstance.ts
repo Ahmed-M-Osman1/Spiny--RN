@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiInstance = axios.create({
-  baseURL: 'https://imdb-api.com/en/API/SearchAll/k_d710y4cc/',
+  baseURL: 'https://imdb-api.com/en/API',
 });
 
 // Response interceptor for API calls
