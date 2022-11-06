@@ -21,8 +21,9 @@ export const styles = StyleSheet.create({
     marginTop: 50,
   },
   selectionPhoto: {
-    height: screenHeight / 3,
-    width: screenWidth / 1.3,
+    height: screenHeight / 3.3,
+    width: screenWidth / 1.5,
+    alignSelf: 'flex-end',
   },
   optionsCardTitle: {
     fontSize: 20,

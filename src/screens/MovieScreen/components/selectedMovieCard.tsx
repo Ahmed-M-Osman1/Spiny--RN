@@ -2,11 +2,16 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { styles } from '../styles';
 import { characters } from '../../../characters/characters';
+import { useAppSelector } from '../../../Redux/hooks';
 
 export default function SelectedMovieCard({
   navigation,
   selectedItem,
 }) {
+  const selectedCharacter = useAppSelector(
+    (state) => state.selectedCharacter
+  );
+
   return (
     <View style={styles.selectedMovieCard}>
       <Text style={styles.selectedCardTitle}>Selected Movie</Text>
@@ -39,7 +44,7 @@ export default function SelectedMovieCard({
             selectedItem.image ==
               'https://imdb-api.com/images/original/nopicture.jpg' ||
             selectedItem.image.length < 1
-              ? characters[0].photo
+              ? selectedCharacter.photo
               : { uri: selectedItem.image }
           }
           resizeMode="stretch"

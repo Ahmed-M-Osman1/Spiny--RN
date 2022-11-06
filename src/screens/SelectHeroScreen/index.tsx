@@ -36,7 +36,7 @@ export default function SelectHeroScreen({
             }}
           >
             <Text style={styles.optionsCardTitle}>{item.name}</Text>
-            <View>
+            <View style={{ flex: 1 }}>
               <Image
                 style={styles.selectionPhoto}
                 source={item.photo}

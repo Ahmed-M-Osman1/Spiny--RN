@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, Image } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 import apiInstance from '../../api/apiInstance';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -80,6 +80,14 @@ export default function MovieScreen({
         }
         navigation={navigation}
       />
+      <TouchableOpacity
+        onPress={() => console.log('first')}
+        style={styles.NavigateToDetailButton}
+      >
+        <Text style={styles.NavigateToDetailButtonText}>
+          Choose anther Random Movie
+        </Text>
+      </TouchableOpacity>
       <Text style={styles.similarTitle}>
         {' '}
         Similar for this Champion

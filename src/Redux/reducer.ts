@@ -7,7 +7,12 @@ import {
 
 const initialState = {
   searchResults: [],
-  selectedCharacter: false,
+  selectedCharacter: {
+    title: '',
+    description: '',
+    id: 1,
+    image: '',
+  },
   MovieDetail: {
     fullTitle: '',
     image: '',

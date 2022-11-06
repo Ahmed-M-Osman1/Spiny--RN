@@ -52,7 +52,7 @@ export const styles = StyleSheet.create({
     marginTop: 50,
   },
   optionsMoviePhoto: {
-    height: screenHeight / 3,
+    height: screenHeight / 3.3,
     width: screenWidth / 1.3,
     borderRadius: 10,
   },
@@ -61,7 +61,6 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   similarTitle: {
-    margin: 15,
     fontSize: 20,
     color: 'navy',
   },
