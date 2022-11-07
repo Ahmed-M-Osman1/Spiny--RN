@@ -6,7 +6,6 @@ import { useAppSelector } from '../../../Redux/hooks';
 
 export default function MovieDetailScrollView() {
   const data = useAppSelector((state) => state.MovieDetail);
-  console.log('=>', data);
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -37,7 +36,9 @@ export default function MovieDetailScrollView() {
       </Text>
       <Text style={[styles.detailText, styles.detailTextHeader]}>
         IMDB No. of Votes:{' '}
-        <Text style={styles.detailText}>{data.imDbRatingVotes} votes.</Text>
+        <Text style={styles.detailText}>
+          {data.imDbRatingVotes} votes.
+        </Text>
       </Text>
       <ActorList actors={data.actorList} />
     </ScrollView>

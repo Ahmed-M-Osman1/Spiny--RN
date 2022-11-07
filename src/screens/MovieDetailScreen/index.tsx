@@ -6,7 +6,11 @@ import MovieDetailScrollView from './components/movieDetailScrollView';
 import apiInstance from '../../api/apiInstance';
 import Loading from '../../components/Loading';
 import { useAppDispatch } from '../../Redux/hooks';
-import { setSelectedMovie, setIsLoading } from '../../Redux/action';
+import {
+  setIsLoading,
+  setSelectedMovieDetail,
+} from '../../Redux/action';
+import { apiKey } from '../../api/apiKey';
 
 export default function MovieDetail({ route, navigation }) {
   const dispatch = useAppDispatch();
@@ -16,10 +20,10 @@ export default function MovieDetail({ route, navigation }) {
       dispatch(setIsLoading(true));
       const { selectedItemID } = route.params;
       await apiInstance
-        .get(`/Title/k_4rgq7u85/${selectedItemID}`)
+        .get(`/Title/${apiKey}/${selectedItemID}`)
         .then((response) => {
           if (response.data) {
-            dispatch(setSelectedMovie(response.data));
+            dispatch(setSelectedMovieDetail(response.data));
             dispatch(setIsLoading(false));
           }
         })

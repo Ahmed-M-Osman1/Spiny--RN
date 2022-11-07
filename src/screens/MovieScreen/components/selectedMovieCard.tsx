@@ -11,7 +11,6 @@ export default function SelectedMovieCard({
   const selectedCharacter = useAppSelector(
     (state) => state.selectedCharacter
   );
-
   return (
     <View style={styles.selectedMovieCard}>
       <Text style={styles.selectedCardTitle}>Selected Movie</Text>

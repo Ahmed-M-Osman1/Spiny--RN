@@ -2,7 +2,8 @@ import {
   SET_SEARCH_RESULTS,
   SET_SELECTED_CHARACTER,
   SET_SELECTED_MOVIE,
-  SET_IS_LOADING
+  SET_IS_LOADING,
+  SET_SELECTED_MOVIE_DETAIL,
 } from './action';
 
 const initialState = {
@@ -24,7 +25,13 @@ const initialState = {
     imDbRatingVotes: '',
     actorList: [],
   },
-  isLoading:false
+  isLoading: false,
+  selectedMovie: {
+    title: '',
+    description: '',
+    id: 1,
+    image: '',
+  },
 };
 
 function appReducer(state = initialState, action) {
@@ -33,10 +40,12 @@ function appReducer(state = initialState, action) {
       return { ...state, searchResults: action.payload };
     case SET_SELECTED_CHARACTER:
       return { ...state, selectedCharacter: action.payload };
-    case SET_SELECTED_MOVIE:
+    case SET_SELECTED_MOVIE_DETAIL:
       return { ...state, MovieDetail: action.payload };
-      case SET_IS_LOADING:
-        return { ...state, isLoading: action.payload };
+    case SET_SELECTED_MOVIE:
+      return { ...state, selectedMovie: action.payload };
+    case SET_IS_LOADING:
+      return { ...state, isLoading: action.payload };
     default:
       return state;
   }

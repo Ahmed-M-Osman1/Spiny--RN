@@ -40,6 +40,16 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  ChooseAntherRandom: {
+    backgroundColor: 'red',
+    height: screenHeight / 14,
+    width: screenWidth / 2,
+    margin: 10,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
   NavigateToDetailButtonText: {
     color: 'white',
     alignSelf: 'center',

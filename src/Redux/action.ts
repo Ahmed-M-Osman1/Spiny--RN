@@ -2,6 +2,7 @@ import { Dispatch } from 'redux';
 
 export const SET_SEARCH_RESULTS = 'SET_SEARCH_RESULTS';
 export const SET_SELECTED_CHARACTER = 'SET_SELECTED_CHARACTER';
+export const SET_SELECTED_MOVIE_DETAIL = 'SET_SELECTED_MOVIE_DETAIL';
 export const SET_SELECTED_MOVIE = 'SET_SELECTED_MOVIE';
 export const SET_IS_LOADING = 'SET_IS_LOADING';
 
@@ -28,6 +29,14 @@ export const setSelectedMovie =
       payload: movie, //action value
     });
   };
+
+export const setSelectedMovieDetail =
+(movie: object) => (dispatch: Dispatch) => {
+  dispatch({
+    type: SET_SELECTED_MOVIE_DETAIL, //action type
+    payload: movie, //action value
+  });
+};
 
 export const setIsLoading =
   (loading: boolean) => (dispatch: Dispatch) => {

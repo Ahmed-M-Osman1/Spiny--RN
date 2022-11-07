@@ -12,7 +12,9 @@ import {
   setIsLoading,
   setSelectedCharacter,
   setSearchResults,
+  setSelectedMovie,
 } from '../../Redux/action';
+import { apiKey } from '../../api/apiKey';
 export default function MovieScreen({
   navigation,
   route,
@@ -34,17 +36,23 @@ export default function MovieScreen({
         searchString = selectedCharacter.searchString;
       } else {
         const randomChampion =
-          characters[generateRandomNumber(0, characters.length)];
+          characters[generateRandomNumber(0, characters.length - 1)];
         dispatch(setSelectedCharacter(randomChampion));
         searchString = randomChampion.searchString;
       }
       await apiInstance
-        .get(`/SearchTitle/k_4rgq7u85/${searchString}`)
+        .get(`/SearchTitle/${apiKey}/${searchString}`)
         .then((response) => {
           if (response.data) {
             dispatch(setSearchResults(response.data.results));
-            console.log(response.data.results);
             dispatch(setIsLoading(false));
+            dispatch(
+              setSelectedMovie(
+                response.data.results[
+                  generateRandomNumber(0, searchResults.length - 1)
+                ]
+              )
+            );
           }
         })
         .catch((e) => {
@@ -55,9 +63,23 @@ export default function MovieScreen({
     return unsubscribe;
   }, []);
 
+  const selectedMovie = useAppSelector(
+    (state) => state.selectedMovie
+  );
+
   const searchResults = useAppSelector(
     (state) => state.searchResults
   );
+
+  const handleSelectAntherMovie = () => {
+    dispatch(
+      setSelectedMovie(
+        searchResults[
+          generateRandomNumber(0, searchResults.length - 1)
+        ]
+      )
+    );
+  };
 
   return (
     <LinearGradient
@@ -69,9 +91,7 @@ export default function MovieScreen({
       <Loading />
       <SelectedMovieCard
         selectedItem={
-          searchResults[
-            generateRandomNumber(0, searchResults.length)
-          ] || {
+          selectedMovie || {
             title: '',
             description: '',
             id: 1,
@@ -81,8 +101,8 @@ export default function MovieScreen({
         navigation={navigation}
       />
       <TouchableOpacity
-        onPress={() => console.log('first')}
-        style={styles.NavigateToDetailButton}
+        onPress={() => handleSelectAntherMovie()}
+        style={styles.ChooseAntherRandom}
       >
         <Text style={styles.NavigateToDetailButtonText}>
           Choose anther Random Movie
